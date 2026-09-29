@@ -1,0 +1,388 @@
+# Listado reportes BIRT (legacy)
+
+Fuente: `Hospital-Legacy/**/*.rptdesign`.
+
+**408** archivos `.rptdesign` (329 nombres distintos: hay copias del mismo
+basename en más de un WAR).
+
+**Universo a migrar (base + GEA):** **297** basename / **355** archivos.
+**N/A otro cliente:** **32** basename / **53** archivos — inventario
+[`listado-reportes-birt-otro-cliente.md`](listado-reportes-birt-otro-cliente.md).
+No hay `.rptdesign` con sufijo `GEA` (GEA usa diseños base;
+`esClienteGEA` = GEA/NEUROS/OFTAL/SANATORIOCANADA/SEMEGER).
+`EpicrisisGYE` queda en el universo: GYE = módulo Guardia y Emergencias,
+no un `esCliente*`.
+
+Marcar `[x]` **solo** cuando el humano lo pida o confirme explícitamente.
+El agente **no** marca automáticamente al cerrar smoke/migración; debe preguntar
+(“¿marco `<reportId>`?”) y esperar confirmación. Quien migra puede marcar a mano.
+
+Huérfanos (`.rptdesign` sin `printReport` / no usados en HIS, igual `[x]` por
+pedido humano): [`listado-reportes-birt-legacy-sin-uso.md`](listado-reportes-birt-legacy-sin-uso.md).
+Otro cliente (no portar): [`listado-reportes-birt-otro-cliente.md`](listado-reportes-birt-otro-cliente.md).
+Problemas observados (dato/layout, sin rediseñar el corte): [`listado-reportes-birt-hallazgos.md`](listado-reportes-birt-hallazgos.md).
+
+## Reportes con integración Api (piloto)
+
+| reportId | Api | Web | Notas |
+|----------|-----|-----|-------|
+| `NroColaEsperaRecep` | AGI ticket | recepción | G1-d |
+| `ConsultaAgendaGeneradas` | `GET .../consulta-agendas/imprimir.pdf` | grilla-turnos-consulta | SDD [`turnos-consulta-agendas-imprimir`](../cortes/turnos/turnos-consulta-agendas-imprimir/) |
+
+## Listado
+
+- [x] `DeterminacionesLab` - `AGH/WebRoot/pages/reports/DeterminacionesLab.rptdesign`
+- [ ] `informeLaboratorio` - `AGH/WebRoot/pages/reports/informeLaboratorio.rptdesign`
+- [ ] `LoteEnvioMuestras` - `AGH/WebRoot/pages/reports/LoteEnvioMuestras.rptdesign`
+- [ ] `modeloInformeLab` - `AGH/WebRoot/pages/reports/modeloInformeLab.rptdesign`
+- [ ] `OrdenCompra` - `AGH/WebRoot/pages/reports/OrdenCompra.rptdesign`
+- [ ] `OrdenPago` - `AGH/WebRoot/pages/reports/OrdenPago.rptdesign`
+- [ ] `recepcionCotizacion` - `AGH/WebRoot/pages/reports/recepcionCotizacion.rptdesign`
+- [ ] `RetencionCEI` - `AGH/WebRoot/pages/reports/RetencionCEI.rptdesign`
+- [ ] `RetencionGanancias` - `AGH/WebRoot/pages/reports/RetencionGanancias.rptdesign`
+- [ ] `RetencionIngresosBrutos` - `AGH/WebRoot/pages/reports/RetencionIngresosBrutos.rptdesign`
+- [ ] `RetencionIngresosBrutosCapital` - `AGH/WebRoot/pages/reports/RetencionIngresosBrutosCapital.rptdesign`
+- [ ] `RetencionIva` - `AGH/WebRoot/pages/reports/RetencionIva.rptdesign`
+- [ ] `RetencionSuss` - `AGH/WebRoot/pages/reports/RetencionSuss.rptdesign`
+- [ ] `SolicitudCotizacion` - `AGH/WebRoot/pages/reports/SolicitudCotizacion.rptdesign`
+- [ ] `NroColaEsperaAdmision` - `AGI/WebRoot/pages/reports/NroColaEsperaAdmision.rptdesign`
+- [x] `NroColaEsperaRecep` - `AGI/WebRoot/pages/reports/NroColaEsperaRecep.rptdesign`
+- [ ] `NroColaEsperaTriage` - `AGI/WebRoot/pages/reports/NroColaEsperaTriage.rptdesign`
+- [ ] `TicketOrdServAmb` - `AGI/WebRoot/pages/reports/TicketOrdServAmb.rptdesign`
+- [ ] `BalanceHidrico` - `AGP/WebRoot/pages/reports/BalanceHidrico.rptdesign`
+- [x] `Epicrisis` - `AGP/WebRoot/pages/reports/Epicrisis.rptdesign`
+- [ ] `informeLaboratorio` - `AGP/WebRoot/pages/reports/informeLaboratorio.rptdesign`
+- [ ] `modeloInformeLab` - `AGP/WebRoot/pages/reports/modeloInformeLab.rptdesign`
+- [ ] `Partograma` - `AGP/WebRoot/pages/reports/Partograma.rptdesign`
+- [ ] `RecetaAmbA4_UNIFICADA` - `AGP/WebRoot/pages/reports/RecetaAmbA4_UNIFICADA.rptdesign`
+- [ ] `RecetaPac` - `AGP/WebRoot/pages/reports/RecetaPac.rptdesign`
+- [ ] `RecetaPacDuplicada` - `AGP/WebRoot/pages/reports/RecetaPacDuplicada.rptdesign`
+- [x] `ResumenAtencion` - `AGP/WebRoot/pages/reports/ResumenAtencion.rptdesign`
+- [x] `Turno` - `AGP/WebRoot/pages/reports/Turno.rptdesign`
+- [ ] `BalanceHidrico` - `HOS-APP/WebRoot/pages/reports/BalanceHidrico.rptdesign`
+- [ ] `Certificado` - `HOS-APP/WebRoot/pages/reports/Certificado.rptdesign`
+- [x] `ConfirmacionDatosPaciente` - `HOS-APP/WebRoot/pages/reports/ConfirmacionDatosPaciente.rptdesign`
+- [x] `ConsultaAgenda` - `HOS-APP/WebRoot/pages/reports/ConsultaAgenda.rptdesign`
+- [x] `ConsultaTurnosPaciente` - `HOS-APP/WebRoot/pages/reports/ConsultaTurnosPaciente.rptdesign`
+- [x] `DietaAmb` - `HOS-APP/WebRoot/pages/reports/DietaAmb.rptdesign`
+- [x] `Epicrisis` - `HOS-APP/WebRoot/pages/reports/Epicrisis.rptdesign`
+- [ ] `EstudioAmbA4_UNIFICADA` - `HOS-APP/WebRoot/pages/reports/EstudioAmbA4_UNIFICADA.rptdesign`
+- [ ] `EstudioIntA4_UNIFICADA` - `HOS-APP/WebRoot/pages/reports/EstudioIntA4_UNIFICADA.rptdesign`
+- [ ] `informeLaboratorio` - `HOS-APP/WebRoot/pages/reports/informeLaboratorio.rptdesign`
+- [ ] `Partograma` - `HOS-APP/WebRoot/pages/reports/Partograma.rptdesign`
+- [x] `PreparacionPrevia` - `HOS-APP/WebRoot/pages/reports/PreparacionPrevia.rptdesign`
+- [ ] `RecetaAmbA4_UNIFICADA` - `HOS-APP/WebRoot/pages/reports/RecetaAmbA4_UNIFICADA.rptdesign`
+- [x] `RecetaPac` - `HOS-APP/WebRoot/pages/reports/RecetaPac.rptdesign`
+- [x] `RecetaPacDuplicada` - `HOS-APP/WebRoot/pages/reports/RecetaPacDuplicada.rptdesign`
+- [x] `RecetaPacOncologica` - `HOS-APP/WebRoot/pages/reports/RecetaPacOncologica.rptdesign`
+- [x] `Turno` - `HOS-APP/WebRoot/pages/reports/Turno.rptdesign`
+- [x] `TurnosAReasignar` - `HOS-APP/WebRoot/pages/reports/TurnosAReasignar.rptdesign`
+- [x] `TurnoTicket` - `HOS-APP/WebRoot/pages/reports/TurnoTicket.rptdesign`
+- [x] `InformeEstudio` - `HOSPITAL_2/WebRoot/pages/ambulatoria/otrosEstudios/InformeEstudio.rptdesign`
+- [ ] `AccionesInmediatas` - `HOSPITAL_2/WebRoot/pages/reports/AccionesInmediatas.rptdesign`
+- [ ] `AccionesInmediatasEstudiosA4` - `HOSPITAL_2/WebRoot/pages/reports/AccionesInmediatasEstudiosA4.rptdesign`
+- [ ] `AccionesInmediatasEstudiosTICKET` - `HOSPITAL_2/WebRoot/pages/reports/AccionesInmediatasEstudiosTICKET.rptdesign`
+- [ ] `AccionesInmediatasIndEnfA4` - `HOSPITAL_2/WebRoot/pages/reports/AccionesInmediatasIndEnfA4.rptdesign`
+- [ ] `AccionesInmediatasIndEnfTICKET` - `HOSPITAL_2/WebRoot/pages/reports/AccionesInmediatasIndEnfTICKET.rptdesign`
+- [ ] `AdmisionEnfermeria` - `HOSPITAL_2/WebRoot/pages/reports/AdmisionEnfermeria.rptdesign`
+- [ ] `AjusteItemDeposito` - `HOSPITAL_2/WebRoot/pages/reports/AjusteItemDeposito.rptdesign`
+- [ ] `AlimentacionParenteralAdultos` - `HOSPITAL_2/WebRoot/pages/reports/AlimentacionParenteralAdultos.rptdesign`
+- [ ] `AltasEntreFechas` - `HOSPITAL_2/WebRoot/pages/reports/AltasEntreFechas.rptdesign`
+- [ ] `AltasPrevistas` - `HOSPITAL_2/WebRoot/pages/reports/AltasPrevistas.rptdesign`
+- [x] `Antecedentes` - `HOSPITAL_2/WebRoot/pages/reports/Antecedentes.rptdesign`
+- [x] `AntecedentesAmb` - `HOSPITAL_2/WebRoot/pages/reports/AntecedentesAmb.rptdesign`
+- [ ] `BalanceHidrico` - `HOSPITAL_2/WebRoot/pages/reports/BalanceHidrico.rptdesign`
+- [ ] `CaratulaAdmision` - `HOSPITAL_2/WebRoot/pages/reports/CaratulaAdmision.rptdesign`
+- [ ] `CaratulaPresentacionLote` - `HOSPITAL_2/WebRoot/pages/reports/CaratulaPresentacionLote.rptdesign`
+- [ ] `CensoAuditoriaMedica` - `HOSPITAL_2/WebRoot/pages/reports/CensoAuditoriaMedica.rptdesign`
+- [ ] `Certificado` - `HOSPITAL_2/WebRoot/pages/reports/Certificado.rptdesign`
+- [ ] `CertificadoAtencionAmb` - `HOSPITAL_2/WebRoot/pages/reports/CertificadoAtencionAmb.rptdesign`
+- [ ] `CertificadoImplante` - `HOSPITAL_2/WebRoot/pages/reports/CertificadoImplante.rptdesign`
+- [ ] `CertificadoInt` - `HOSPITAL_2/WebRoot/pages/reports/CertificadoInt.rptdesign`
+- [ ] `checkListCirugia` - `HOSPITAL_2/WebRoot/pages/reports/checkListCirugia.rptdesign`
+- [ ] `checkListCirugiaApaisada` - `HOSPITAL_2/WebRoot/pages/reports/checkListCirugiaApaisada.rptdesign`
+- [ ] `CierreTurnoEnf` - `HOSPITAL_2/WebRoot/pages/reports/CierreTurnoEnf.rptdesign`
+- [ ] `CirugiaEntreFechas` - `HOSPITAL_2/WebRoot/pages/reports/CirugiaEntreFechas.rptdesign`
+- [ ] `CirugiaEntreFechasHDD` - `HOSPITAL_2/WebRoot/pages/reports/CirugiaEntreFechasHDD.rptdesign`
+- [ ] `CirugiasDelDia` - `HOSPITAL_2/WebRoot/pages/reports/CirugiasDelDia.rptdesign`
+- [ ] `CirugiasDelDiaHDD` - `HOSPITAL_2/WebRoot/pages/reports/CirugiasDelDiaHDD.rptdesign`
+- [ ] `CodBarraItemFraccionado` - `HOSPITAL_2/WebRoot/pages/reports/CodBarraItemFraccionado.rptdesign`
+- [ ] `CodPrestSeccionNomen` - `HOSPITAL_2/WebRoot/pages/reports/CodPrestSeccionNomen.rptdesign`
+- [ ] `ComparacionCotizaciones` - `HOSPITAL_2/WebRoot/pages/reports/ComparacionCotizaciones.rptdesign`
+- [ ] `CompInternoTicket` - `HOSPITAL_2/WebRoot/pages/reports/CompInternoTicket.rptdesign`
+- [ ] `ComprobanteDebitoCargado` - `HOSPITAL_2/WebRoot/pages/reports/ComprobanteDebitoCargado.rptdesign`
+- [ ] `ComprobanteEntregaInforme` - `HOSPITAL_2/WebRoot/pages/reports/ComprobanteEntregaInforme.rptdesign`
+- [ ] `ComprobantesRendidos` - `HOSPITAL_2/WebRoot/pages/reports/ComprobantesRendidos.rptdesign`
+- [x] `ConfirmacionDatosPaciente` - `HOSPITAL_2/WebRoot/pages/reports/ConfirmacionDatosPaciente.rptdesign`
+- [ ] `ConsentimientoRecepcion` - `HOSPITAL_2/WebRoot/pages/reports/ConsentimientoRecepcion.rptdesign`
+- [ ] `ConsultaAcompanante` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAcompanante.rptdesign`
+- [ ] `ConsultaAdmisionesPorMes` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAdmisionesPorMes.rptdesign`
+- [x] `ConsultaAgenda` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAgenda.rptdesign`
+- [x] `ConsultaAgendaGeneradas` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAgendaGeneradas.rptdesign`
+- [x] `ConsultaAgendasReemplazadas` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAgendasReemplazadas.rptdesign`
+- [ ] `ConsultaAnalisisLabPac` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAnalisisLabPac.rptdesign`
+- [ ] `ConsultaAtencionAmbulatoria` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAtencionAmbulatoria.rptdesign`
+- [ ] `ConsultaAutogestion` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaAutogestion.rptdesign`
+- [x] `ConsultaCamasDisponibles` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaCamasDisponibles.rptdesign`
+- [x] `ConsultaCensoAdministrativo` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaCensoAdministrativo.rptdesign`
+- [x] `consultaCensoGrafico` - `HOSPITAL_2/WebRoot/pages/reports/consultaCensoGrafico.rptdesign`
+- [x] `ConsultaCensoSeguridad` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaCensoSeguridad.rptdesign`
+- [x] `ConsultaDetalleOrdenLabPac` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaDetalleOrdenLabPac.rptdesign`
+- [x] `ConsultaDeudaEntidad` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaDeudaEntidad.rptdesign`
+- [x] `ConsultaEstadoCamas` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaEstadoCamas.rptdesign`
+- [x] `ConsultaEstadoEstudios` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaEstadoEstudios.rptdesign`
+- [x] `ConsultaInformesPorProfesional` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaInformesPorProfesional.rptdesign`
+- [x] `consultaMovStock` - `HOSPITAL_2/WebRoot/pages/reports/consultaMovStock.rptdesign`
+- [x] `ConsultaMuestras` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaMuestras.rptdesign`
+- [x] `ConsultaOrdenesDeServicio` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaOrdenesDeServicio.rptdesign`
+- [x] `ConsultaOrdLabPac` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaOrdLabPac.rptdesign`
+- [x] `ConsultaPacienteConvenio` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaPacienteConvenio.rptdesign`
+- [x] `ConsultaPacientesAtendidos` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaPacientesAtendidos.rptdesign`
+- [x] `ConsultaPedInterconsulta` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaPedInterconsulta.rptdesign`
+- [x] `ConsultaPersonalAdmision` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaPersonalAdmision.rptdesign`
+- [x] `consultaPrecioDeCosto` - `HOSPITAL_2/WebRoot/pages/reports/consultaPrecioDeCosto.rptdesign`
+- [x] `ConsultaProveedores` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaProveedores.rptdesign`
+- [x] `ConsultaReqAdi` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaReqAdi.rptdesign`
+- [x] `ConsultaReservasInt` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaReservasInt.rptdesign`
+- [ ] `ConsultaScoreApache3` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaScoreApache3.rptdesign`
+- [x] `ConsultaTipoMovStock` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaTipoMovStock.rptdesign`
+- [x] `ConsultaTriage` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaTriage.rptdesign`
+- [x] `ConsultaTurnosAsignadosXOperador` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaTurnosAsignadosXOperador.rptdesign`
+- [x] `ConsultaTurnosPaciente` - `HOSPITAL_2/WebRoot/pages/reports/ConsultaTurnosPaciente.rptdesign`
+- [x] `CtaCteConvenio` - `HOSPITAL_2/WebRoot/pages/reports/CtaCteConvenio.rptdesign`
+- [x] `CtaCteGarantiaPaciente` - `HOSPITAL_2/WebRoot/pages/reports/CtaCteGarantiaPaciente.rptdesign`
+- [x] `CtaCtePaciente` - `HOSPITAL_2/WebRoot/pages/reports/CtaCtePaciente.rptdesign`
+- [x] `cuadroOperatorio` - `HOSPITAL_2/WebRoot/pages/reports/cuadroOperatorio.rptdesign`
+- [ ] `detalleComprobanteInclusionModulos` - `HOSPITAL_2/WebRoot/pages/reports/detalleComprobanteInclusionModulos.rptdesign`
+- [ ] `detalleComprobanteInclusionModulosCompInterno` - `HOSPITAL_2/WebRoot/pages/reports/detalleComprobanteInclusionModulosCompInterno.rptdesign`
+- [ ] `DetalleFactura` - `HOSPITAL_2/WebRoot/pages/reports/DetalleFactura.rptdesign`
+- [ ] `DetalleFacturaCompInterno` - `HOSPITAL_2/WebRoot/pages/reports/DetalleFacturaCompInterno.rptdesign`
+- [ ] `detalleNCAnalisisDebito` - `HOSPITAL_2/WebRoot/pages/reports/detalleNCAnalisisDebito.rptdesign`
+- [ ] `detalleNDAnalisisDebito` - `HOSPITAL_2/WebRoot/pages/reports/detalleNDAnalisisDebito.rptdesign`
+- [ ] `DetallePrefactura` - `HOSPITAL_2/WebRoot/pages/reports/DetallePrefactura.rptdesign`
+- [ ] `detallePrefacturaInclusionModulos` - `HOSPITAL_2/WebRoot/pages/reports/detallePrefacturaInclusionModulos.rptdesign`
+- [ ] `DetallePrestacionesComprobante` - `HOSPITAL_2/WebRoot/pages/reports/DetallePrestacionesComprobante.rptdesign`
+- [ ] `detalleRefacturaAMB` - `HOSPITAL_2/WebRoot/pages/reports/detalleRefacturaAMB.rptdesign`
+- [ ] `detalleRefacturaINT` - `HOSPITAL_2/WebRoot/pages/reports/detalleRefacturaINT.rptdesign`
+- [ ] `DetalleRendicion` - `HOSPITAL_2/WebRoot/pages/reports/DetalleRendicion.rptdesign`
+- [ ] `DetalleRendicionPorComprobante` - `HOSPITAL_2/WebRoot/pages/reports/DetalleRendicionPorComprobante.rptdesign`
+- [ ] `DetalleRendicionPrefactura` - `HOSPITAL_2/WebRoot/pages/reports/DetalleRendicionPrefactura.rptdesign`
+- [x] `DeterminacionesLab` - `HOSPITAL_2/WebRoot/pages/reports/DeterminacionesLab.rptdesign`
+- [x] `DetLibroInternacion` - `HOSPITAL_2/WebRoot/pages/reports/DetLibroInternacion.rptdesign`
+- [x] `devolucionInsumos` - `HOSPITAL_2/WebRoot/pages/reports/devolucionInsumos.rptdesign`
+- [x] `devolucionProvExterna` - `HOSPITAL_2/WebRoot/pages/reports/devolucionProvExterna.rptdesign`
+- [x] `DevolucionRechazoItemTrazable` - `HOSPITAL_2/WebRoot/pages/reports/DevolucionRechazoItemTrazable.rptdesign`
+- [x] `DevolucionReservaItemPacInt` - `HOSPITAL_2/WebRoot/pages/reports/DevolucionReservaItemPacInt.rptdesign`
+- [x] `DietaAmb` - `HOSPITAL_2/WebRoot/pages/reports/DietaAmb.rptdesign`
+- [x] `DietaInt` - `HOSPITAL_2/WebRoot/pages/reports/DietaInt.rptdesign`
+- [x] `DispensacionItemTrazable` - `HOSPITAL_2/WebRoot/pages/reports/DispensacionItemTrazable.rptdesign`
+- [x] `DurAtenXGrpPrestEquipo` - `HOSPITAL_2/WebRoot/pages/reports/DurAtenXGrpPrestEquipo.rptdesign`
+- [x] `DurAtenXGrpPrestPers` - `HOSPITAL_2/WebRoot/pages/reports/DurAtenXGrpPrestPers.rptdesign`
+- [x] `DurAtenXGrpPrestServ` - `HOSPITAL_2/WebRoot/pages/reports/DurAtenXGrpPrestServ.rptdesign`
+- [x] `EntradasPorDia` - `HOSPITAL_2/WebRoot/pages/reports/EntradasPorDia.rptdesign`
+- [x] `EntregaEstudios` - `HOSPITAL_2/WebRoot/pages/reports/EntregaEstudios.rptdesign`
+- [x] `Epicrisis` - `HOSPITAL_2/WebRoot/pages/reports/Epicrisis.rptdesign`
+- [ ] `EpicrisisGYE` - `HOSPITAL_2/WebRoot/pages/reports/EpicrisisGYE.rptdesign`
+- [x] `EsquemaTratamiento` - `HOSPITAL_2/WebRoot/pages/reports/EsquemaTratamiento.rptdesign`
+- [x] `EsquemaTratamientoPac` - `HOSPITAL_2/WebRoot/pages/reports/EsquemaTratamientoPac.rptdesign`
+- [x] `EstadisticaCenso` - `HOSPITAL_2/WebRoot/pages/reports/EstadisticaCenso.rptdesign`
+- [x] `EstudioAmbA4` - `HOSPITAL_2/WebRoot/pages/reports/EstudioAmbA4.rptdesign`
+- [ ] `EstudioAmbA4_UNIFICADA` - `HOSPITAL_2/WebRoot/pages/reports/EstudioAmbA4_UNIFICADA.rptdesign`
+- [ ] `EstudioAmbTICKET` - `HOSPITAL_2/WebRoot/pages/reports/EstudioAmbTICKET.rptdesign`
+- [x] `EstudioIntA4` - `HOSPITAL_2/WebRoot/pages/reports/EstudioIntA4.rptdesign`
+- [ ] `EstudioIntA4_UNIFICADA` - `HOSPITAL_2/WebRoot/pages/reports/EstudioIntA4_UNIFICADA.rptdesign`
+- [ ] `EstudioIntTICKET` - `HOSPITAL_2/WebRoot/pages/reports/EstudioIntTICKET.rptdesign`
+- [ ] `EtiquetaA4Cirugia` - `HOSPITAL_2/WebRoot/pages/reports/EtiquetaA4Cirugia.rptdesign`
+- [x] `EtiquetaDatosPaciente` - `HOSPITAL_2/WebRoot/pages/reports/EtiquetaDatosPaciente.rptdesign`
+- [x] `etiquetaItem` - `HOSPITAL_2/WebRoot/pages/reports/etiquetaItem.rptdesign`
+- [x] `etiquetaItemA4` - `HOSPITAL_2/WebRoot/pages/reports/etiquetaItemA4.rptdesign`
+- [ ] `etiquetaSimilar` - `HOSPITAL_2/WebRoot/pages/reports/etiquetaSimilar.rptdesign`
+- [ ] `etiquetaSimilarA4` - `HOSPITAL_2/WebRoot/pages/reports/etiquetaSimilarA4.rptdesign`
+- [x] `EtiquetasMod` - `HOSPITAL_2/WebRoot/pages/reports/EtiquetasMod.rptdesign`
+- [x] `evaluacionPreanestesica` - `HOSPITAL_2/WebRoot/pages/reports/evaluacionPreanestesica.rptdesign`
+- [x] `eventosTrazablesPaciente` - `HOSPITAL_2/WebRoot/pages/reports/eventosTrazablesPaciente.rptdesign`
+- [x] `EvolucionesPorProfesional` - `HOSPITAL_2/WebRoot/pages/reports/EvolucionesPorProfesional.rptdesign`
+- [x] `EvolucionPacInt` - `HOSPITAL_2/WebRoot/pages/reports/EvolucionPacInt.rptdesign`
+- [x] `ExamenFisico` - `HOSPITAL_2/WebRoot/pages/reports/ExamenFisico.rptdesign`
+- [ ] `FacturaA` - `HOSPITAL_2/WebRoot/pages/reports/FacturaA.rptdesign`
+- [ ] `FacturaAInternado` - `HOSPITAL_2/WebRoot/pages/reports/FacturaAInternado.rptdesign`
+- [ ] `FacturaAPREIMPRESO` - `HOSPITAL_2/WebRoot/pages/reports/FacturaAPREIMPRESO.rptdesign`
+- [ ] `FacturaB` - `HOSPITAL_2/WebRoot/pages/reports/FacturaB.rptdesign`
+- [ ] `FacturaBInternado` - `HOSPITAL_2/WebRoot/pages/reports/FacturaBInternado.rptdesign`
+- [ ] `FacturaBPREIMPRESO` - `HOSPITAL_2/WebRoot/pages/reports/FacturaBPREIMPRESO.rptdesign`
+- [ ] `FacturaC` - `HOSPITAL_2/WebRoot/pages/reports/FacturaC.rptdesign`
+- [ ] `FacturaCInternado` - `HOSPITAL_2/WebRoot/pages/reports/FacturaCInternado.rptdesign`
+- [ ] `FacturaTicket` - `HOSPITAL_2/WebRoot/pages/reports/FacturaTicket.rptdesign`
+- [x] `FormAltaPac` - `HOSPITAL_2/WebRoot/pages/reports/FormAltaPac.rptdesign`
+- [x] `FormHcPac` - `HOSPITAL_2/WebRoot/pages/reports/FormHcPac.rptdesign`
+- [x] `FormHcPacCirugia` - `HOSPITAL_2/WebRoot/pages/reports/FormHcPacCirugia.rptdesign`
+- [x] `FormularioPedidoMedicamentos` - `HOSPITAL_2/WebRoot/pages/reports/FormularioPedidoMedicamentos.rptdesign`
+- [x] `FormularioServiciosCentro` - `HOSPITAL_2/WebRoot/pages/reports/FormularioServiciosCentro.rptdesign`
+- [x] `FormularioTransferenciaMedicamentos` - `HOSPITAL_2/WebRoot/pages/reports/FormularioTransferenciaMedicamentos.rptdesign`
+- [x] `grpFormEntregaCirugia` - `HOSPITAL_2/WebRoot/pages/reports/grpFormEntregaCirugia.rptdesign`
+- [ ] `HistoriaClinica(old)` - `HOSPITAL_2/WebRoot/pages/reports/HistoriaClinica(old).rptdesign`
+- [ ] `HistoriaClinica` - `HOSPITAL_2/WebRoot/pages/reports/HistoriaClinica.rptdesign`
+- [ ] `HistoriaClinicaCARATULA` - `HOSPITAL_2/WebRoot/pages/reports/HistoriaClinicaCARATULA.rptdesign`
+- [ ] `HistoriaClinicaEVENTO` - `HOSPITAL_2/WebRoot/pages/reports/HistoriaClinicaEVENTO.rptdesign`
+- [ ] `HTMLDocument` - `HOSPITAL_2/WebRoot/pages/reports/HTMLDocument.rptdesign`
+- [x] `IndicacionesAmbA4` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesAmbA4.rptdesign`
+- [x] `IndicacionesAmbA4_UNIFICADA` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesAmbA4_UNIFICADA.rptdesign`
+- [x] `IndicacionesAmbA5` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesAmbA5.rptdesign`
+- [x] `IndicacionesAmbTICKET` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesAmbTICKET.rptdesign`
+- [ ] `IndicacionesIntA4` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesIntA4.rptdesign`
+- [ ] `IndicacionesIntTICKET` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesIntTICKET.rptdesign`
+- [x] `IndicacionesVigentesNutricion` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionesVigentesNutricion.rptdesign`
+- [ ] `IndicacionPacPISO` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionPacPISO.rptdesign`
+- [ ] `IndicacionPracticasInternacion` - `HOSPITAL_2/WebRoot/pages/reports/IndicacionPracticasInternacion.rptdesign`
+- [ ] `InformeHtml` - `HOSPITAL_2/WebRoot/pages/reports/InformeHtml.rptdesign`
+- [x] `InformeIntPac` - `HOSPITAL_2/WebRoot/pages/reports/InformeIntPac.rptdesign`
+- [ ] `informeLaboratorio` - `HOSPITAL_2/WebRoot/pages/reports/informeLaboratorio.rptdesign`
+- [x] `InformePac` - `HOSPITAL_2/WebRoot/pages/reports/InformePac.rptdesign`
+- [x] `IngresosEntreFechas` - `HOSPITAL_2/WebRoot/pages/reports/IngresosEntreFechas.rptdesign`
+- [x] `Interrogatorio` - `HOSPITAL_2/WebRoot/pages/reports/Interrogatorio.rptdesign`
+- [x] `ItemTrazable` - `HOSPITAL_2/WebRoot/pages/reports/ItemTrazable.rptdesign`
+- [x] `LibroInternacion` - `HOSPITAL_2/WebRoot/pages/reports/LibroInternacion.rptdesign`
+- [ ] `LibroIvaVentas` - `HOSPITAL_2/WebRoot/pages/reports/LibroIvaVentas.rptdesign`
+- [ ] `LiquidacionComprobante` - `HOSPITAL_2/WebRoot/pages/reports/LiquidacionComprobante.rptdesign`
+- [x] `listadoPersonalEspecialidad` - `HOSPITAL_2/WebRoot/pages/reports/listadoPersonalEspecialidad.rptdesign`
+- [x] `listadoPersonalPorServicio` - `HOSPITAL_2/WebRoot/pages/reports/listadoPersonalPorServicio.rptdesign`
+- [x] `listadoPersonalProvinciaLocalidad` - `HOSPITAL_2/WebRoot/pages/reports/listadoPersonalProvinciaLocalidad.rptdesign`
+- [x] `ListadoRemitentes` - `HOSPITAL_2/WebRoot/pages/reports/ListadoRemitentes.rptdesign`
+- [x] `LocDispositivo` - `HOSPITAL_2/WebRoot/pages/reports/LocDispositivo.rptdesign`
+- [x] `LoteDescarteMuestras` - `HOSPITAL_2/WebRoot/pages/reports/LoteDescarteMuestras.rptdesign`
+- [x] `LoteEnvioMuestras` - `HOSPITAL_2/WebRoot/pages/reports/LoteEnvioMuestras.rptdesign`
+- [ ] `LoteInformes` - `HOSPITAL_2/WebRoot/pages/reports/LoteInformes.rptdesign`
+- [ ] `LoteRevisionInformes` - `HOSPITAL_2/WebRoot/pages/reports/LoteRevisionInformes.rptdesign`
+- [x] `MedicamentoAConsignacion` - `HOSPITAL_2/WebRoot/pages/reports/MedicamentoAConsignacion.rptdesign`
+- [x] `MedicamentosAdministrados` - `HOSPITAL_2/WebRoot/pages/reports/MedicamentosAdministrados.rptdesign`
+- [ ] `modeloInformeLab` - `HOSPITAL_2/WebRoot/pages/reports/modeloInformeLab.rptdesign`
+- [ ] `modulo` - `HOSPITAL_2/WebRoot/pages/reports/modulo.rptdesign`
+- [x] `Monitoreos` - `HOSPITAL_2/WebRoot/pages/reports/Monitoreos.rptdesign`
+- [x] `MuestraAnatoPatologica` - `HOSPITAL_2/WebRoot/pages/reports/MuestraAnatoPatologica.rptdesign`
+- [ ] `necesidadCompra` - `HOSPITAL_2/WebRoot/pages/reports/necesidadCompra.rptdesign`
+- [ ] `notaCreditoA` - `HOSPITAL_2/WebRoot/pages/reports/notaCreditoA.rptdesign`
+- [ ] `notaCreditoC` - `HOSPITAL_2/WebRoot/pages/reports/notaCreditoC.rptdesign`
+- [ ] `NotaCreditoTicket` - `HOSPITAL_2/WebRoot/pages/reports/NotaCreditoTicket.rptdesign`
+- [ ] `notaDebitoA` - `HOSPITAL_2/WebRoot/pages/reports/notaDebitoA.rptdesign`
+- [ ] `notaDebitoC` - `HOSPITAL_2/WebRoot/pages/reports/notaDebitoC.rptdesign`
+- [ ] `Nutricion` - `HOSPITAL_2/WebRoot/pages/reports/Nutricion.rptdesign`
+- [ ] `NutricionInternado` - `HOSPITAL_2/WebRoot/pages/reports/NutricionInternado.rptdesign`
+- [ ] `OcupacionAmbiente` - `HOSPITAL_2/WebRoot/pages/reports/OcupacionAmbiente.rptdesign`
+- [ ] `OrdenCompra` - `HOSPITAL_2/WebRoot/pages/reports/OrdenCompra.rptdesign`
+- [ ] `OrdenesPorPaciente` - `HOSPITAL_2/WebRoot/pages/reports/OrdenesPorPaciente.rptdesign`
+- [ ] `OrdenPedido` - `HOSPITAL_2/WebRoot/pages/reports/OrdenPedido.rptdesign`
+- [ ] `OrdenServicio` - `HOSPITAL_2/WebRoot/pages/reports/OrdenServicio.rptdesign`
+- [ ] `ordenServInt` - `HOSPITAL_2/WebRoot/pages/reports/ordenServInt.rptdesign`
+- [ ] `parteAnest` - `HOSPITAL_2/WebRoot/pages/reports/parteAnest.rptdesign`
+- [ ] `ParteInsumosObstetricos` - `HOSPITAL_2/WebRoot/pages/reports/ParteInsumosObstetricos.rptdesign`
+- [ ] `ParteInsumosQuirurgico` - `HOSPITAL_2/WebRoot/pages/reports/ParteInsumosQuirurgico.rptdesign`
+- [ ] `ParteObstetrico` - `HOSPITAL_2/WebRoot/pages/reports/ParteObstetrico.rptdesign`
+- [ ] `ParteOperatorio` - `HOSPITAL_2/WebRoot/pages/reports/ParteOperatorio.rptdesign`
+- [ ] `ParteOperatorioComp` - `HOSPITAL_2/WebRoot/pages/reports/ParteOperatorioComp.rptdesign`
+- [ ] `Partograma` - `HOSPITAL_2/WebRoot/pages/reports/Partograma.rptdesign`
+- [ ] `PedidoEstudioExterno` - `HOSPITAL_2/WebRoot/pages/reports/PedidoEstudioExterno.rptdesign`
+- [ ] `PedidosEstudiosExternos` - `HOSPITAL_2/WebRoot/pages/reports/PedidosEstudiosExternos.rptdesign`
+- [ ] `PedidosInternado` - `HOSPITAL_2/WebRoot/pages/reports/PedidosInternado.rptdesign`
+- [ ] `PedInterconsulta` - `HOSPITAL_2/WebRoot/pages/reports/PedInterconsulta.rptdesign`
+- [ ] `periodoExpulsivoParto` - `HOSPITAL_2/WebRoot/pages/reports/periodoExpulsivoParto.rptdesign`
+- [ ] `PrefacturaA` - `HOSPITAL_2/WebRoot/pages/reports/PrefacturaA.rptdesign`
+- [ ] `PrefacturaAInternado` - `HOSPITAL_2/WebRoot/pages/reports/PrefacturaAInternado.rptdesign`
+- [ ] `PrefacturaBC` - `HOSPITAL_2/WebRoot/pages/reports/PrefacturaBC.rptdesign`
+- [ ] `PrefacturaBCInternado` - `HOSPITAL_2/WebRoot/pages/reports/PrefacturaBCInternado.rptdesign`
+- [ ] `PreguntaLaboratorio` - `HOSPITAL_2/WebRoot/pages/reports/PreguntaLaboratorio.rptdesign`
+- [ ] `PreparacionPedidoMedicamentosA4` - `HOSPITAL_2/WebRoot/pages/reports/PreparacionPedidoMedicamentosA4.rptdesign`
+- [ ] `PreparacionPedidoMedicamentosA5` - `HOSPITAL_2/WebRoot/pages/reports/PreparacionPedidoMedicamentosA5.rptdesign`
+- [ ] `PreparacionPedidoMedicamentosTICKET` - `HOSPITAL_2/WebRoot/pages/reports/PreparacionPedidoMedicamentosTICKET.rptdesign`
+- [x] `PreparacionPrevia` - `HOSPITAL_2/WebRoot/pages/reports/PreparacionPrevia.rptdesign`
+- [ ] `PrestacionesLoteAmb` - `HOSPITAL_2/WebRoot/pages/reports/PrestacionesLoteAmb.rptdesign`
+- [ ] `PrestacionesPorServicio` - `HOSPITAL_2/WebRoot/pages/reports/PrestacionesPorServicio.rptdesign`
+- [ ] `PrestamoItem` - `HOSPITAL_2/WebRoot/pages/reports/PrestamoItem.rptdesign`
+- [ ] `PrimerTurnoLibre` - `HOSPITAL_2/WebRoot/pages/reports/PrimerTurnoLibre.rptdesign`
+- [ ] `ProtocoloCitostaticos` - `HOSPITAL_2/WebRoot/pages/reports/ProtocoloCitostaticos.rptdesign`
+- [ ] `ProtocoloCitostaticos_v1` - `HOSPITAL_2/WebRoot/pages/reports/ProtocoloCitostaticos_v1.rptdesign`
+- [ ] `ProvisionExterna` - `HOSPITAL_2/WebRoot/pages/reports/ProvisionExterna.rptdesign`
+- [ ] `RecepcionCompras` - `HOSPITAL_2/WebRoot/pages/reports/RecepcionCompras.rptdesign`
+- [ ] `recepcionCotizacion` - `HOSPITAL_2/WebRoot/pages/reports/recepcionCotizacion.rptdesign`
+- [ ] `RecetaAmbA4` - `HOSPITAL_2/WebRoot/pages/reports/RecetaAmbA4.rptdesign`
+- [ ] `RecetaAmbA4_UNIFICADA` - `HOSPITAL_2/WebRoot/pages/reports/RecetaAmbA4_UNIFICADA.rptdesign`
+- [ ] `RecetaAmbOftalmologicaA4` - `HOSPITAL_2/WebRoot/pages/reports/RecetaAmbOftalmologicaA4.rptdesign`
+- [ ] `RecetaAmbOftalmologicaTICKET` - `HOSPITAL_2/WebRoot/pages/reports/RecetaAmbOftalmologicaTICKET.rptdesign`
+- [ ] `RecetaAmbTICKET` - `HOSPITAL_2/WebRoot/pages/reports/RecetaAmbTICKET.rptdesign`
+- [ ] `RecetaIntA4` - `HOSPITAL_2/WebRoot/pages/reports/RecetaIntA4.rptdesign`
+- [ ] `RecetaIntA4_UNIFICADA` - `HOSPITAL_2/WebRoot/pages/reports/RecetaIntA4_UNIFICADA.rptdesign`
+- [ ] `RecetaIntTICKET` - `HOSPITAL_2/WebRoot/pages/reports/RecetaIntTICKET.rptdesign`
+- [ ] `RecetaLibre` - `HOSPITAL_2/WebRoot/pages/reports/RecetaLibre.rptdesign`
+- [ ] `RecetaLibreInt` - `HOSPITAL_2/WebRoot/pages/reports/RecetaLibreInt.rptdesign`
+- [x] `RecetaPac` - `HOSPITAL_2/WebRoot/pages/reports/RecetaPac.rptdesign`
+- [x] `RecetaPacDuplicada` - `HOSPITAL_2/WebRoot/pages/reports/RecetaPacDuplicada.rptdesign`
+- [x] `RecetaPacOncologica` - `HOSPITAL_2/WebRoot/pages/reports/RecetaPacOncologica.rptdesign`
+- [x] `RecetaPsicotropico` - `HOSPITAL_2/WebRoot/pages/reports/RecetaPsicotropico.rptdesign`
+- [ ] `Recibo` - `HOSPITAL_2/WebRoot/pages/reports/Recibo.rptdesign`
+- [ ] `recuperoProvExterna` - `HOSPITAL_2/WebRoot/pages/reports/recuperoProvExterna.rptdesign`
+- [ ] `refacturaA` - `HOSPITAL_2/WebRoot/pages/reports/refacturaA.rptdesign`
+- [ ] `refacturaB` - `HOSPITAL_2/WebRoot/pages/reports/refacturaB.rptdesign`
+- [ ] `RegistroAdmDirectaEnf` - `HOSPITAL_2/WebRoot/pages/reports/RegistroAdmDirectaEnf.rptdesign`
+- [ ] `RegistroAdmEnf` - `HOSPITAL_2/WebRoot/pages/reports/RegistroAdmEnf.rptdesign`
+- [ ] `RegistroCtrlEnf` - `HOSPITAL_2/WebRoot/pages/reports/RegistroCtrlEnf.rptdesign`
+- [ ] `RegistroEnfermeria` - `HOSPITAL_2/WebRoot/pages/reports/RegistroEnfermeria.rptdesign`
+- [ ] `RemitoR` - `HOSPITAL_2/WebRoot/pages/reports/RemitoR.rptdesign`
+- [ ] `RendicionCaja` - `HOSPITAL_2/WebRoot/pages/reports/RendicionCaja.rptdesign`
+- [ ] `RendicionLoteAmbOrdenado` - `HOSPITAL_2/WebRoot/pages/reports/RendicionLoteAmbOrdenado.rptdesign`
+- [ ] `RendicionLoteInt` - `HOSPITAL_2/WebRoot/pages/reports/RendicionLoteInt.rptdesign`
+- [ ] `RendicionLotePorPlanAmb` - `HOSPITAL_2/WebRoot/pages/reports/RendicionLotePorPlanAmb.rptdesign`
+- [ ] `RendicionOrdServAmb` - `HOSPITAL_2/WebRoot/pages/reports/RendicionOrdServAmb.rptdesign`
+- [ ] `rendicionPrefactura` - `HOSPITAL_2/WebRoot/pages/reports/rendicionPrefactura.rptdesign`
+- [ ] `RendicionRecepcion` - `HOSPITAL_2/WebRoot/pages/reports/RendicionRecepcion.rptdesign`
+- [ ] `RenicionesPendientesConfirmar` - `HOSPITAL_2/WebRoot/pages/reports/RenicionesPendientesConfirmar.rptdesign`
+- [ ] `ReservasEsquemaTratamiento` - `HOSPITAL_2/WebRoot/pages/reports/ReservasEsquemaTratamiento.rptdesign`
+- [x] `ResumenAtencion` - `HOSPITAL_2/WebRoot/pages/reports/ResumenAtencion.rptdesign`
+- [x] `ResumenAtencionAmb` - `HOSPITAL_2/WebRoot/pages/reports/ResumenAtencionAmb.rptdesign`
+- [ ] `ResumenFacturacionAmb` - `HOSPITAL_2/WebRoot/pages/reports/ResumenFacturacionAmb.rptdesign`
+- [ ] `ResumenFacturacionInt` - `HOSPITAL_2/WebRoot/pages/reports/ResumenFacturacionInt.rptdesign`
+- [ ] `RetiraInformeTicket` - `HOSPITAL_2/WebRoot/pages/reports/RetiraInformeTicket.rptdesign`
+- [ ] `ScorePac` - `HOSPITAL_2/WebRoot/pages/reports/ScorePac.rptdesign`
+- [ ] `SolicitudCotizacion` - `HOSPITAL_2/WebRoot/pages/reports/SolicitudCotizacion.rptdesign`
+- [ ] `SolicitudIntExterna` - `HOSPITAL_2/WebRoot/pages/reports/SolicitudIntExterna.rptdesign`
+- [ ] `SolicitudOrdenPago` - `HOSPITAL_2/WebRoot/pages/reports/SolicitudOrdenPago.rptdesign`
+- [ ] `SolOrdenCompra` - `HOSPITAL_2/WebRoot/pages/reports/SolOrdenCompra.rptdesign`
+- [ ] `SolOrdenPago` - `HOSPITAL_2/WebRoot/pages/reports/SolOrdenPago.rptdesign`
+- [ ] `TarjetaPersonal` - `HOSPITAL_2/WebRoot/pages/reports/TarjetaPersonal.rptdesign`
+- [ ] `TEST` - `HOSPITAL_2/WebRoot/pages/reports/TEST.rptdesign`
+- [ ] `TicketOrdServAmb` - `HOSPITAL_2/WebRoot/pages/reports/TicketOrdServAmb.rptdesign`
+- [ ] `TrabajosPendienteEntrega` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPendienteEntrega.rptdesign`
+- [ ] `TrabajosPendienteEntregaVertical` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPendienteEntregaVertical.rptdesign`
+- [ ] `TrabajosPorAreaProcesamiento` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPorAreaProcesamiento.rptdesign`
+- [ ] `TrabajosPorAreaServicio` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPorAreaServicio.rptdesign`
+- [ ] `TrabajosPorAreaServicioVertical` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPorAreaServicioVertical.rptdesign`
+- [ ] `TrabajosPorLaboratorioDeriva` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPorLaboratorioDeriva.rptdesign`
+- [ ] `TrabajosPorLaboratorioDerivaVertical` - `HOSPITAL_2/WebRoot/pages/reports/TrabajosPorLaboratorioDerivaVertical.rptdesign`
+- [ ] `TrenExtraccion` - `HOSPITAL_2/WebRoot/pages/reports/TrenExtraccion.rptdesign`
+- [ ] `TrenRealizacionEstudiosInt` - `HOSPITAL_2/WebRoot/pages/reports/TrenRealizacionEstudiosInt.rptdesign`
+- [x] `Turno` - `HOSPITAL_2/WebRoot/pages/reports/Turno.rptdesign`
+- [ ] `turnos` - `HOSPITAL_2/WebRoot/pages/reports/turnos.rptdesign`
+- [x] `TurnosAReasignar` - `HOSPITAL_2/WebRoot/pages/reports/TurnosAReasignar.rptdesign`
+- [x] `TurnoTicket` - `HOSPITAL_2/WebRoot/pages/reports/TurnoTicket.rptdesign`
+- [ ] `ValeDeConsumo` - `HOSPITAL_2/WebRoot/pages/reports/ValeDeConsumo.rptdesign`
+- [ ] `valoracionEnfermeria` - `HOSPITAL_2/WebRoot/pages/reports/valoracionEnfermeria.rptdesign`
+- [ ] `ValoresRendidos` - `HOSPITAL_2/WebRoot/pages/reports/ValoresRendidos.rptdesign`
+- [ ] `OrdenCompra` - `PROVEEDORES/WebRoot/pages/reports/OrdenCompra.rptdesign`
+- [ ] `RecepcionCompras` - `PROVEEDORES/WebRoot/pages/reports/RecepcionCompras.rptdesign`
+- [ ] `recepcionCotizacion` - `PROVEEDORES/WebRoot/pages/reports/recepcionCotizacion.rptdesign`
+- [ ] `SolicitudCotizacion` - `PROVEEDORES/WebRoot/pages/reports/SolicitudCotizacion.rptdesign`
+- [ ] `RecetaAmbA4_UNIFICADA` - `RECETAS/WebRoot/pages/reports/RecetaAmbA4_UNIFICADA.rptdesign`
+- [ ] `RecetaPac` - `RECETAS/WebRoot/pages/reports/RecetaPac.rptdesign`
+- [ ] `RecetaPacDuplicada` - `RECETAS/WebRoot/pages/reports/RecetaPacDuplicada.rptdesign`
+- [x] `RecetaPacOncologica` - `RECETAS/WebRoot/pages/reports/RecetaPacOncologica.rptdesign`
+- [ ] `FacturaA` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaA.rptdesign`
+- [ ] `FacturaAInternado` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaAInternado.rptdesign`
+- [ ] `FacturaAPREIMPRESO` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaAPREIMPRESO.rptdesign`
+- [ ] `FacturaB` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaB.rptdesign`
+- [ ] `FacturaBInternado` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaBInternado.rptdesign`
+- [ ] `FacturaBPREIMPRESO` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaBPREIMPRESO.rptdesign`
+- [ ] `FacturaC` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaC.rptdesign`
+- [ ] `FacturaCInternado` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaCInternado.rptdesign`
+- [ ] `FacturaTicket` - `WS-HOSPITAL/WebRoot/pages/reports/FacturaTicket.rptdesign`
+- [ ] `informeLaboratorio` - `WS-HOSPITAL/WebRoot/pages/reports/informeLaboratorio.rptdesign`
+- [ ] `RecetaPac` - `WS-HOSPITAL/WebRoot/pages/reports/RecetaPac.rptdesign`
+- [ ] `Recibo` - `WS-HOSPITAL/WebRoot/pages/reports/Recibo.rptdesign`
+- [x] `Turno` - `WS-HOSPITAL/WebRoot/pages/reports/Turno.rptdesign`

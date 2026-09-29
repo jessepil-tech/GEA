@@ -1,0 +1,51 @@
+CLASE	ACTIVA	INTERVALO	INTERVALO_SEGUNDOS	INTERVALO_MINUTOS	HORA_INICIO	INTERVALO_DIA	APLICACION
+ActualizaCatalogoProductoAnmatJob	N	MINUTOS		5			SCHEDULER
+CheckHabTurnosJob	N	MINUTOS		60			SCHEDULER
+ConfirmaParteAutomaticamenteJob	N	MINUTOS		60			SCHEDULER
+CorridaConsultasJob	N	MINUTOS		0	04:00		SCHEDULER
+EnvioBionexoJob	N	MINUTOS		5			SCHEDULER
+EnvioMailsJob	N	MINUTOS		8			SCHEDULER
+EnvioMailsOrdLabPacJob	N	MINUTOS		45			SCHEDULER
+EnvioPacientesDosysJob	N	MINUTOS		5			SCHEDULER
+EnvioSmsJob	N	MINUTOS		1			SCHEDULER
+EnvioWhatsappJob	N	MINUTOS		2			SCHEDULER
+FinalizarVigenciaDetIndicacionJob	N	MINUTOS		5			SCHEDULER
+GeneraNecesidadCompraHMSJob	N	MINUTOS		5			SCHEDULER
+GeneracionAsientoContableJob	N	MINUTOS		31			SCHEDULER
+GeneracionOcupacionAmbienteAmbJob	N	DIARIO		0	23:55		SCHEDULER
+GeneracionOrdenLiqHonEntidadJob	N	MINUTOS		10	1:30		SCHEDULER
+GeneracionPedidoAutomaticoJob	N	MINUTOS		5			SCHEDULER
+InsertarDeterminacionLaboratorioJob	N	MINUTOS		10	0:10		SCHEDULER
+InsertarDeterminacionServicioJob	N	MINUTOS		10	0:00		SCHEDULER
+InterfaceComprobanteCitiJob	N	MINUTOS		5			SCHEDULER
+InterfaceCostoPrecioVtaHospitalJob	N	MINUTOS		5			SCHEDULER
+InterfaceDerechosPensionesJob	N	MINUTOS		90			SCHEDULER
+InterfaceInternacionUPJob	N	MINUTOS		30			SCHEDULER
+InterfaceItemExternoJob	N	MINUTOS		10			SCHEDULER
+InterfaceItemExternoJob	N	MINUTOS		5			SCHEDULER
+InterfaceLaboratorioEnvioJob	N	MINUTOS		2			SCHEDULER
+InterfaceLaboratorioRecepcionJob	N	MINUTOS		2			SCHEDULER
+InterfaceMensajesXMLGriensuJob	N	MINUTOS		2			SCHEDULER
+InterfaceMigrarAltaInternacionCemicJob	N	MINUTOS		10			SCHEDULER
+InterfaceMigrarInternacionCemicJob	N	MINUTOS		30			SCHEDULER
+InterfaceMigrarInternacionJob	N	MINUTOS		30			SCHEDULER
+InterfaceMigrarMovStockCemicJob	N	MINUTOS		10			SCHEDULER
+InterfaceMigrarPacientesAmbCemicJob	N	MINUTOS		5			SCHEDULER
+InterfaceNecesidadCompraJob	N	MINUTOS		60			SCHEDULER
+InterfaceNextlabJob	N	MINUTOS		2			SCHEDULER
+InterfaceNextlabRecepcionJob	N	MINUTOS		17			SCHEDULER
+InterfaceRecepcionCompraCemicJob	N	MINUTOS		5			SCHEDULER
+InterfaceRecepcionCompraHospitalJob	N	MINUTOS		5			SCHEDULER
+LiquidacionComprobantesFactJob	N	MINUTOS		720		1	SCHEDULER
+LiquidacionComprobantesJob	N	MINUTOS		720		1	SCHEDULER
+MailTurnoJob	N	MINUTOS		2			SCHEDULER
+MensajeDemoraReqAdiCirugiaJob	N	MINUTOS		2			SCHEDULER
+MensajeSolHousekeepingJob	N	MINUTOS		2			SCHEDULER
+MigraPersonalV8AV9Job	N	MINUTOS		5			SCHEDULER
+MigrarAsientosContablesJob	N	MINUTOS		2			SCHEDULER
+MigrarTurnoVencidoJob	N	MINUTOS		41			SCHEDULER
+ProcesarSmsJob	N	MINUTOS		29			SCHEDULER
+RecepcionBionexoJob	N	MINUTOS		5			SCHEDULER
+RecepcionSmsJob	N	MINUTOS		1			SCHEDULER
+SincroInterfaceLaboratorioJob	N	MINUTOS		10	3:00		SCHEDULER
+ValidarComprobantesJob	N	MINUTOS		10	1:00		SCHEDULER
